@@ -2,6 +2,8 @@
 
 UART Transmitter + Receiver in SystemVerilog with Loopback Testing.
 
+![Waveform](waveform.png)
+
 ## How it Works
 TX sends 8-bit data -> RX receives same data (Loopback)
 Start bit (0) + 8 Data bits + Stop bit (1)
@@ -19,12 +21,4 @@ Sent 3C, Received = 3c -> PASS: 3C Correct!
 SystemVerilog, EDA Playground, GitHub
 
 ## Concepts
-UART Protocol, FSM, Baud Timing, Loopback Testing# major-project-2
-
-
-# Major Project 2 - UART TX/RX Loopback
-
-![Waveform](waveform.png)
-
-## How it Works
-TX sends 8-bit data -> RX receives same data (Loopback)
+UART Protocol, FSM, Baud Timing, Loopback Testing
