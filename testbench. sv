@@ -1,0 +1,46 @@
+`timescale 1ns/1ps
+module testbench;
+  logic clk = 0, rst = 1;
+  logic tx_start = 0;
+  logic [7:0] tx_data;
+  logic tx, tx_done;
+  logic [7:0] rx_data;
+  logic rx_done;
+
+  // Loopback: TX output -> RX input
+  uart_tx dut_tx(.clk(clk), .rst(rst), .tx_start(tx_start), .tx_data(tx_data), .tx(tx), .tx_done(tx_done));
+  uart_rx dut_rx(.clk(clk), .rst(rst), .rx(tx), .rx_data(rx_data), .rx_done(rx_done));
+
+  always #5 clk = ~clk;
+
+  task send_byte(input [7:0] data);
+    begin
+      @(posedge clk);
+      tx_data = data;
+      tx_start = 1;
+      @(posedge clk);
+      tx_start = 0;
+      wait(rx_done == 1);
+      @(posedge clk);
+      #10;
+      $display("Sent = %h, Received = %h", data, rx_data);
+      if(rx_data == data)
+        $display("PASS: %h Correct!", data);
+      else
+        $display("FAIL: Expected %h Got %h", data, rx_data);
+    end
+  endtask
+
+  initial begin
+    $dumpfile("dump.vcd");
+    $dumpvars(0, testbench);
+    #20 rst = 0;
+    #20;
+    send_byte(8'hA5);
+    #100;
+    send_byte(8'h3C);
+    #100;
+    $display("UART Loopback Test Done");
+    $finish;
+  end
+endmodule
