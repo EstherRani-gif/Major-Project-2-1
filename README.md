@@ -20,3 +20,11 @@ SystemVerilog, EDA Playground, GitHub
 
 ## Concepts
 UART Protocol, FSM, Baud Timing, Loopback Testing# major-project-2
+
+
+# Major Project 2 - UART TX/RX Loopback
+
+![Waveform](waveform.png)
+
+## How it Works
+TX sends 8-bit data -> RX receives same data (Loopback)
