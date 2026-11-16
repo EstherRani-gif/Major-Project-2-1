@@ -1,24 +1,40 @@
-# Major Project 2 - UART TX/RX Loopback
+# Major Project 2 - UART TX/RX Loopback Using Verilog
 
-UART Transmitter + Receiver in SystemVerilog with Loopback Testing.
+## Description
+This project implements UART TX/RX Loopback using Verilog. The Transmitter sends 8-bit serial data and the Receiver receives the same data back through loopback.
 
-![Waveform](waveform.png)
+It is designed using Finite State Machine (FSM) logic and verified through simulation.
 
-## How it Works
-TX sends 8-bit data -> RX receives same data (Loopback)
-Start bit (0) + 8 Data bits + Stop bit (1)
+## How it Works?
+- **TX** - Transmitter sends 8-bit data serially
+- **RX** - Receiver receives 8-bit data serially
+- **Loopback** - TX output is connected directly to RX input
+- **Start Bit** - Transmission starts with Start Bit (0)
+- **Data Bits** - 8 Data Bits are sent one by one
+- **Stop Bit** - Transmission ends with Stop Bit (1)
 
-## Result
-Sent A5, Received = a5 -> PASS: A5 Correct!
-Sent 3C, Received = 3c -> PASS: 3C Correct!
+Operations change based on Data:
+TX Sends A5 -> RX Receives A5 -> TX Sends 3C -> RX Receives 3C
 
-## Files
-- `design.sv` - UART TX + RX modules
-- `testbench.sv` - Testbench with Loopback
-- `waveform.png` - Simulation Waveform
+## Modules
+- `design.sv` - UART TX/RX Loopback design
+- `testbench.sv` - Testbench for verification
+- `testbench.sv` 
 
-## Tools
-SystemVerilog, EDA Playground, GitHub
+## Simulation
+- Tool: EDA Playground (Icarus Verilog + GTKWave)
+- TX Data given, RX Data correctly received
+- Waveform verified successfully
 
-## Concepts
-UART Protocol, FSM, Baud Timing, Loopback Testing
+## Waveform
+![Waveform](waveform(4).png)
+
+## Tools Used
+- SystemVerilog HDL
+- EDA Playground
+- GTKWave
+
+## Author
+Muvva Esther Rani
+
+B.Tech - Electronics and Communication
