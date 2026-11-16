@@ -27,7 +27,7 @@ TX Sends A5 -> RX Receives A5 -> TX Sends 3C -> RX Receives 3C
 - Waveform verified successfully
 
 ## Waveform
-![Waveform](waveform(4).png)
+![Waveform](waveform.png)
 
 ## Tools Used
 - SystemVerilog HDL
