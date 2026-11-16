@@ -19,7 +19,7 @@ TX Sends A5 -> RX Receives A5 -> TX Sends 3C -> RX Receives 3C
 ## Modules
 - `design.sv` - UART TX/RX Loopback design
 - `testbench.sv` - Testbench for verification
-- `testbench.sv` 
+- `waveform.png` - output photo 
 
 ## Simulation
 - Tool: EDA Playground (Icarus Verilog + GTKWave)
