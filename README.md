@@ -37,4 +37,4 @@ TX Sends A5 -> RX Receives A5 -> TX Sends 3C -> RX Receives 3C
 ## Author
 Muvva Esther Rani
 
-B.Tech - Electronics and Communication
+B.Tech - Electronics and Communication Engineering
